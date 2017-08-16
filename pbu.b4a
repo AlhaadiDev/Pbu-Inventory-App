@@ -1,0 +1,120 @@
+﻿Version=6
+NumberOfModules=9
+Module1=Login
+Module2=DbUtils
+Module3=InventoryList
+Module4=InventoryView
+Module5=SlidingPanels
+Module6=Home
+Module7=image
+Module8=about
+Module9=Starter
+Build1=Default,pbu.inventory.apps
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: http://www.basic4ppc.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="7" android:targetSdkVersion="21"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~SetApplicationAttribute(android:supportsRtl, "true")~\n~'End of default text.~\n~~\n~SetApplicationAttribute(android:theme, "@style/MyAppTheme")~\n~~\n~CreateResource(values, themes.xml,~\n~<resources>~\n~~\n~    <style name="MyAppTheme" parent="Theme.AppCompat">~\n~        <item name="colorPrimary">#0054a6</item>~\n~        <item name="colorPrimaryDark">#0964bd</item>~\n~        <item name="colorAccent">#0054a6</item>~\n~        <item name="windowNoTitle">true</item>~\n~        <item name="windowActionBar">true</item>~\n~		<item name="windowActionModeOverlay">true</item>~\n~		~\n~	~\n~    </style>~\n~~\n~</resources>~\n~)~\n~~\n~~\n~
+IconFile=
+NumberOfFiles=13
+File1=about.bal
+File2=access_granted.mp3
+File3=create_items.bal
+File4=enterauthorizationcode.mp3
+File5=image.bal
+File6=intro.bal
+File7=items.bal
+File8=jskk.db
+File9=login.bal
+File10=main.bal
+File11=menu.bal
+File12=mylogin.db
+File13=wlcome.mp3
+NumberOfLibraries=8
+Library1=core
+Library2=irloadingviews
+Library3=sql
+Library4=byteconverter
+Library5=encryption
+Library6=appcompat
+Library7=animation
+Library8=icosflip3dview
+@EndOfDesignText@
+#Region  Project Attributes 
+	#ApplicationLabel: PBUSCAPP
+	#VersionCode: 14
+	#VersionName: 1.4
+	#VersionName: Beta
+	'SupportedOrientations possible values: unspecified, landscape or portrait.
+	#SupportedOrientations: portrait
+	#CanInstallToExternalStorage: False
+#End Region
+
+#Region  Activity Attributes 
+	#FullScreen: False
+	#IncludeTitle: False
+#End Region
+
+Sub Process_Globals
+	'These global variables will be declared once when the application starts.
+	'These variables can be accessed from all modules.
+Dim timer1 As Timer
+Public x1, x2, x3 As String
+
+End Sub
+
+Sub Globals
+	'These global variables will be redeclared each time the activity is created.
+	'These variables can only be accessed from this module.
+
+
+
+	Dim ProgressBar1 As ProgressBar
+	Dim num As Int
+
+
+	Private Button1 As Button
+	Private btnScramble As Button
+	Private btnAbout As Button
+
+	Private btnVolume As Button
+	Private IRCircularRing1 As IRCircularRing
+End Sub
+
+Sub Activity_Create(FirstTime As Boolean)
+	'Do not forget to load the layout file created with the visual designer. For example:
+	Activity.LoadLayout("intro")
+	
+IRCircularRing1.startAnim
+		timer1.Initialize("timer1",50)
+	timer1.Enabled = True
+	ProgressBar1.Top = 94%y
+	ProgressBar1.Left  = 0%x
+	ProgressBar1.Width = 100%x
+End Sub
+
+Sub Activity_Resume
+
+End Sub
+
+Sub Activity_Pause (UserClosed As Boolean)
+
+End Sub
+
+Sub timer1_tick
+num = num +1
+ProgressBar1.Progress = num
+
+If ProgressBar1.Progress == 2 Then
+
+End If
+
+If ProgressBar1.Progress == 70 Then
+
+
+End If
+
+
+If ProgressBar1.Progress == 100 Then
+timer1.Enabled = False
+IRCircularRing1.stopAnim
+StartActivity("Login")
+Activity.Finish
+End If
+End Sub
