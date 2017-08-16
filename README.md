@@ -5,4 +5,4 @@ Develop use <a href="https://www.b4x.com/" />Basic 4 Android </a>
 
 <p>
 
-<img src="https://raw.githubusercontent.com/nazrulwazir/Pbu-Inventory-App/master/Files/PROJECT1.bmp" width="200">
+<img src="https://raw.githubusercontent.com/nazrulwazir/Pbu-Inventory-App/master/Files/PROJECT1.bmp" width="400">
